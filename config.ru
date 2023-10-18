@@ -1,9 +1,10 @@
 require 'roda'
+require 'htmx'
 
 class App < Roda
   route do |r|
-    r.get "hello" do
-      "hello!"
+    r.get 'hello' do
+      'hello!'
     end
   end
 end
