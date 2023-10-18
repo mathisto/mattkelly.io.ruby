@@ -85,12 +85,12 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   falcon (~> 0.42.3)
   hiccdown (~> 0.1.3)
   htmx (~> 0.4.0)
-  openssl
   rerun (~> 0.14.0)
   roda (~> 3.73)
 
