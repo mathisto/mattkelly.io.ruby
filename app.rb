@@ -1,11 +1,9 @@
-require 'roda'
+require 'sinatra'
 require 'hiccdown'
 
-class App < Roda
-  route do |r|
-    r.get 'hello', String do |name|
-      view = [:h1, "Whadup #{name}!"]
-      Hiccdown::to_html(view)
-    end
-  end
+get '/frank-says' do
+  header = [:h1, "Whadup #{frank.upcase}!"]
+  body = [:p, "Put this in your pipe & smoke it!"]
+  view = [header, body]
+  Hiccdown::to_html(view)
 end
