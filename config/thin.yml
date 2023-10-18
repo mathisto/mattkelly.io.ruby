@@ -14,5 +14,4 @@ threaded: true
 no-epoll: true
 daemonize: true
 socket: tmp/sockets/thin.sock
-chdir: /path/to/your/apps/root
 tag: mattkelly.io.thin
