@@ -1,21 +1,24 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-ruby "3.2.2"
+source 'https://rubygems.org'
 
-gem "faker"
-gem "hiccdown"
-gem "puma"
-gem "sinatra"
+ruby '3.2.2'
+
+gem 'faker'
+gem 'hiccdown'
+gem 'rocco'
+gem 'sinatra'
+gem 'thin'
 
 group :test do
-  gem "guard-rspec", require: false
-  gem "rspec"
+  gem 'guard-rspec', require: false
+  gem 'rspec'
 end
 
 group :development do
-  gem "rubocop"
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem "pry"
-  gem "rerun"
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry'
+  gem 'rerun'
+  gem 'rubocop'
 end
