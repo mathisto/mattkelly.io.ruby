@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
+gem 'byebug'
 gem 'faker'
 gem 'hiccdown'
 gem 'rocco'
@@ -18,7 +19,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'byebug'
   gem 'pry'
   gem 'rerun'
   gem 'rubocop'
