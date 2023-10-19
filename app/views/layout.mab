@@ -3,7 +3,6 @@
 html5 do
   head do
     script 'https://cdn.tailwindcss.com'
-    style 'https://cdn.tailwindcss.com'
     title 'mattkelly.io'
   end
   body(class: 'bg-slate-900 text-slate-300') do

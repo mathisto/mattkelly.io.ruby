@@ -16,9 +16,6 @@
   --red: #f7768e;
 }
 
-body,
-html {
-  background: var(--bg0);
-  font-family: "Roboto", "Open Sans", Arial, sans-serif;
-  color: var(--fg0);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

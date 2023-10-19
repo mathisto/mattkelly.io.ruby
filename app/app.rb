@@ -14,17 +14,11 @@ class App < Sinatra::Base
   enable :static
 
   get '/' do
-    markaby do
-      div.container do
-        h1(class: 'text-4xl font-bold colors-blue-500') { 'mattkelly.io' }
-        p 'Brought to you by Ruby, Sinatra, Markaby, and Tailwind CSS.'
-      end
-    end
+    markaby :index
   end
 
   get '/api' do
     content_type :json
-    # Just echoes params
     { params: }.to_json
   end
 end

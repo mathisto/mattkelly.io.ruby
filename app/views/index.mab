@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-# # This is just a ruby file!
-# We can use markup for rocco rendering in these
-# Markaby template files as well!
-div.container do
-  h1(class: 'colors-sky-500') { 'mattkelly.io' }
-  p 'Brought to you by Ruby, Sinatra, Hiccdown, and Tailwind CSS.'
+div.container(class: 'bg-slate-900') do
+  h1(class: 'text-blue-500') { 'mattkelly.io' }
+  p 'Brought to you by Ruby, Sinatra, Markaby, and Tailwind CSS.'
 end
