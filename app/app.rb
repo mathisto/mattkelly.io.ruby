@@ -13,11 +13,12 @@ class App < Sinatra::Base
   set :public_folder, 'docs'
   enable :static
 
+  # The ["Landing Page"](/)
   get '/' do
-    # [Homepage](/)
     markaby :index
   end
 
+  # The ["Landing Page"](/api) which simply echos params
   get '/api' do
     content_type :json
     { params: }.to_json

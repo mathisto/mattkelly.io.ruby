@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-div.container do
+div.magic do
   h1 'mattkelly.io'
   p 'Brought to you by Ruby, Sinatra, and Markaby'
   a(href: '/app/app.html') do

@@ -9,65 +9,94 @@
 </head>
 <body>
   <div class="container">
-    <div class="page">
+    <div class="main">
 
       <div class="header">
-        
-          <h1>app.rb</h1>
-        
+        <h1>app.rb</h1>
 
+        
+          <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+              
+                
+                <li>
+                  <a class="source" href="app.html">
+                    app/app.rb
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="views/index.html">
+                    app/views/index.mab
+                  </a>
+                </li>
+              
+                
+                <li>
+                  <a class="source" href="views/layout.html">
+                    app/views/layout.mab
+                  </a>
+                </li>
+              
+            </ol>
+          </div>
         
       </div>
-
       
         
         <p>frozen_string_literal: true</p>
-
-        
-      
-        
-        <p>No need to drag our big sibling, Rails, into the mix.
+<p>No need to drag our big sibling, Rails, into the mix.
 Let’s keep it simple and use Sinatra.</p>
 
-        
-          <div class='highlight'><pre><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;sinatra/base&#x27;</span></pre></div>
-        
+        <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 5;"><span class="line" id="L5"><span style="color: #D32F2F">require</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;sinatra/base&#39;</span></span>
+<span class="line empty-line" id="L6"></span>
+<span class="line empty-line" id="L7"></span></code></pre>
       
         
         <p>I’d like to keep everything as “ruby as possible”. Let’s use the venerable Markaby.</p>
 
-        
-          <div class='highlight'><pre><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;markaby&#x27;</span></pre></div>
-        
+        <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 8;"><span class="line" id="L8"><span style="color: #D32F2F">require</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;markaby&#39;</span></span>
+<span class="line empty-line" id="L9"></span>
+<span class="line empty-line" id="L10"></span></code></pre>
       
         
         <p>Our index page and entry point for the app.</p>
 
-        
-          <div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> &lt; Sinatra::Base</span>
-  set <span class="hljs-symbol">:root</span>, File.dirname(<span class="hljs-keyword">__FILE__</span>)
-  set <span class="hljs-symbol">:public_folder</span>, <span class="hljs-string">&#x27;docs&#x27;</span>
-  enable <span class="hljs-symbol">:static</span>
-
-  get <span class="hljs-string">&#x27;/&#x27;</span> <span class="hljs-keyword">do</span></pre></div>
-        
+        <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 11;"><span class="line" id="L11"><span style="color: #D32F2F">class</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">App</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">&lt;</span><span style="color: #24292EFF"> </span><span style="color: #6F42C1">Sinatra::Base</span></span>
+<span class="line" id="L12"><span style="color: #24292EFF">  set :root</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #1976D2">File</span><span style="color: #212121">.</span><span style="color: #24292EFF">dirname(__FILE__)</span></span>
+<span class="line" id="L13"><span style="color: #24292EFF">  set :public_folder</span><span style="color: #212121">,</span><span style="color: #24292EFF"> </span><span style="color: #22863A">&#39;docs&#39;</span></span>
+<span class="line" id="L14"><span style="color: #24292EFF">  enable :static</span></span>
+<span class="line empty-line" id="L15"></span>
+<span class="line empty-line" id="L16"></span></code></pre>
       
         
-        <p><a href="/">Homepage</a></p>
+        <p>The <a href="/">“Landing Page”</a></p>
 
-        
-          <div class='highlight'><pre>    markaby <span class="hljs-symbol">:index</span>
-  <span class="hljs-keyword">end</span>
-
-  get <span class="hljs-string">&#x27;/api&#x27;</span> <span class="hljs-keyword">do</span>
-    content_type <span class="hljs-symbol">:json</span>
-    { <span class="hljs-symbol">params:</span> }.to_json
-  <span class="hljs-keyword">end</span>
-<span class="hljs-keyword">end</span></pre></div>
-        
+        <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 17;"><span class="line" id="L17"><span style="color: #24292EFF">  get </span><span style="color: #22863A">&#39;/&#39;</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">do</span></span>
+<span class="line" id="L18"><span style="color: #24292EFF">    markaby :index</span></span>
+<span class="line" id="L19"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">end</span></span>
+<span class="line empty-line" id="L20"></span>
+<span class="line empty-line" id="L21"></span></code></pre>
       
-      <div class="fleur">h</div>
+        
+        <p>The <a href="/api">“Landing Page”</a> which simply echos params</p>
+
+        <pre class="shiki" style="background-color: transparent"><code style="--line-start-number: 22;"><span class="line" id="L22"><span style="color: #24292EFF">  get </span><span style="color: #22863A">&#39;/api&#39;</span><span style="color: #24292EFF"> </span><span style="color: #D32F2F">do</span></span>
+<span class="line" id="L23"><span style="color: #24292EFF">    content_type :json</span></span>
+<span class="line" id="L24"><span style="color: #24292EFF">    { params: }</span><span style="color: #212121">.</span><span style="color: #24292EFF">to_json</span></span>
+<span class="line" id="L25"><span style="color: #24292EFF">  </span><span style="color: #D32F2F">end</span></span>
+<span class="line" id="L26"><span style="color: #D32F2F">end</span></span>
+<span class="line empty-line" id="L27"></span>
+<span class="line empty-line" id="L28"></span></code></pre>
+      
     </div>
+    <footer>
+      <div>
+        Generated by <a href="https://github.com/mercmobily/docco">Docco</a>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
