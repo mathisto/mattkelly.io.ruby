@@ -2,7 +2,7 @@
 
 # No need to drag our big sibling, Rails, into the mix.
 # Let's keep it simple and use Sinatra.
-require 'sinatra'
+require 'sinatra/base'
 
 # I'd like to keep everything as "ruby as possible". Let's use the venerable Markaby.
 require 'markaby'
@@ -12,6 +12,9 @@ require './app/app'
 
 # Our index page and entry point for the app.
 class App < Sinatra::Base
+  set :root, File.dirname(__FILE__)
+  set :public_folder, proc { File.join(root, 'static') }
+
   get '/' do
     markaby do
       div.container do
