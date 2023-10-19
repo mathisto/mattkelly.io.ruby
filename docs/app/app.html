@@ -50,23 +50,12 @@ Let’s keep it simple and use Sinatra.</p>
   enable <span class="hljs-symbol">:static</span>
 
   get <span class="hljs-string">&#x27;/&#x27;</span> <span class="hljs-keyword">do</span>
-    markaby <span class="hljs-keyword">do</span>
-      div.container <span class="hljs-keyword">do</span>
-        h1(<span class="hljs-class"><span class="hljs-keyword">class</span>: &#x27;<span class="hljs-title">text</span>-4<span class="hljs-title">xl</span> <span class="hljs-title">font</span>-<span class="hljs-title">bold</span> <span class="hljs-title">colors</span>-<span class="hljs-title">blue</span>-500&#x27;) { &#x27;<span class="hljs-title">mattkelly</span>.<span class="hljs-title">io</span>&#x27; }</span>
-        p <span class="hljs-string">&#x27;Brought to you by Ruby, Sinatra, Markaby, and Tailwind CSS.&#x27;</span>
-      <span class="hljs-keyword">end</span>
-    <span class="hljs-keyword">end</span>
+    markaby <span class="hljs-symbol">:index</span>
   <span class="hljs-keyword">end</span>
 
   get <span class="hljs-string">&#x27;/api&#x27;</span> <span class="hljs-keyword">do</span>
-    content_type <span class="hljs-symbol">:json</span></pre></div>
-        
-      
-        
-        <p>Just echoes params</p>
-
-        
-          <div class='highlight'><pre>    { <span class="hljs-symbol">params:</span> }.to_json
+    content_type <span class="hljs-symbol">:json</span>
+    { <span class="hljs-symbol">params:</span> }.to_json
   <span class="hljs-keyword">end</span>
 <span class="hljs-keyword">end</span></pre></div>
         
