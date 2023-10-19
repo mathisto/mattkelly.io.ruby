@@ -1,0 +1,6 @@
+# frozen_string_literal: true
+
+div.container do
+  h1(class: 'colors-sky-500') { 'mattkelly.io' }
+  p 'Brought to you by Ruby, Sinatra, Hiccdown, and Tailwind CSS.'
+end
