@@ -14,6 +14,7 @@ class App < Sinatra::Base
   enable :static
 
   get '/' do
+    # [Homepage](/)
     markaby :index
   end
 
