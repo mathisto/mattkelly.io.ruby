@@ -1,0 +1,24 @@
+:root {
+  --bg0: #0f0f14;
+  --bg1: #1a1b26;
+  --bg2: #24283b;
+  --bg3: #343b58;
+  --bg4: #414868;
+  --fg0: #a9b1d6;
+  --fg1: #c0caf5;
+  --blue1: #7aa2f7;
+  --blue2: #2ac3de;
+  --orange: #ff9e64;
+  --pink: #bb9af7;
+  --text: #9aa5ce;
+  --comment: #565f89;
+  --green: #9ece6a;
+  --red: #f7768e;
+}
+
+body,
+html {
+  background: var(--bg0);
+  font-family: "Roboto", "Open Sans", Arial, sans-serif;
+  color: var(--fg0);
+}

@@ -8,9 +8,6 @@ gem 'byebug'
 
 # https://github.com/dchacke/hiccdown
 
-# https://rtomayko.github.io/rocco/rocco.html
-gem 'rocco'
-
 gem 'markaby', '~> 0.9.0'
 
 # https://sinatrarb.com/intro.html

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>app.rb</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="public/stylesheets/normalize.css" />
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="page">
+
+      <div class="header">
+        
+          <h1>app.rb</h1>
+        
+
+        
+      </div>
+
+      
+        
+        <p>frozen_string_literal: true</p>
+
+        
+      
+        
+        <p>No need to drag our big sibling, Rails, into the mix.
+Let’s keep it simple and use Sinatra.</p>
+
+        
+          <div class='highlight'><pre><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;sinatra/base&#x27;</span></pre></div>
+        
+      
+        
+        <p>I’d like to keep everything as “ruby as possible”. Let’s use the venerable Markaby.</p>
+
+        
+          <div class='highlight'><pre><span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;markaby&#x27;</span></pre></div>
+        
+      
+        
+        <p>Our index page and entry point for the app.</p>
+
+        
+          <div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> &lt; Sinatra::Base</span>
+  set <span class="hljs-symbol">:root</span>, File.dirname(<span class="hljs-keyword">__FILE__</span>)
+  set <span class="hljs-symbol">:public_folder</span>, <span class="hljs-string">&#x27;docs&#x27;</span>
+  enable <span class="hljs-symbol">:static</span>
+
+  get <span class="hljs-string">&#x27;/&#x27;</span> <span class="hljs-keyword">do</span>
+    markaby <span class="hljs-keyword">do</span>
+      div.container <span class="hljs-keyword">do</span>
+        h1(<span class="hljs-class"><span class="hljs-keyword">class</span>: &#x27;<span class="hljs-title">text</span>-4<span class="hljs-title">xl</span> <span class="hljs-title">font</span>-<span class="hljs-title">bold</span> <span class="hljs-title">colors</span>-<span class="hljs-title">blue</span>-500&#x27;) { &#x27;<span class="hljs-title">mattkelly</span>.<span class="hljs-title">io</span>&#x27; }</span>
+        p <span class="hljs-string">&#x27;Brought to you by Ruby, Sinatra, Markaby, and Tailwind CSS.&#x27;</span>
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  get <span class="hljs-string">&#x27;/api&#x27;</span> <span class="hljs-keyword">do</span>
+    content_type <span class="hljs-symbol">:json</span></pre></div>
+        
+      
+        
+        <p>Just echoes params</p>
+
+        
+          <div class='highlight'><pre>    { <span class="hljs-symbol">params:</span> }.to_json
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span></pre></div>
+        
+      
+      <div class="fleur">h</div>
+    </div>
+  </div>
+</body>
+</html>

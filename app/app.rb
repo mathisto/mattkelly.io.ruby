@@ -7,13 +7,10 @@ require 'sinatra/base'
 # I'd like to keep everything as "ruby as possible". Let's use the venerable Markaby.
 require 'markaby'
 
-# And finally, we will need our common page layout.
-require './app/app'
-
 # Our index page and entry point for the app.
 class App < Sinatra::Base
   set :root, File.dirname(__FILE__)
-  set :public_folder, 'static'
+  set :public_folder, 'docs'
   enable :static
 
   get '/' do
