@@ -13,7 +13,8 @@ require './app/app'
 # Our index page and entry point for the app.
 class App < Sinatra::Base
   set :root, File.dirname(__FILE__)
-  set :public_folder, proc { File.join(root, 'static') }
+  set :public_folder, 'static'
+  enable :static
 
   get '/' do
     markaby do
@@ -22,5 +23,11 @@ class App < Sinatra::Base
         p 'Brought to you by Ruby, Sinatra, Markaby, and Tailwind CSS.'
       end
     end
+  end
+
+  get '/api' do
+    content_type :json
+    # Just echoes params
+    { params: }.to_json
   end
 end
