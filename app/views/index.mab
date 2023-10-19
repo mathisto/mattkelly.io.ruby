@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-div.container(class: 'bg-slate-900') do
-  h1(class: 'text-blue-500') { 'mattkelly.io' }
-  p 'Brought to you by Ruby, Sinatra, Markaby, and Tailwind CSS.'
+div.container do
+  h1 'mattkelly.io'
+  p 'Brought to you by Ruby, Sinatra, and Markaby'
+  a(href: '/app/app.html') do
+    h2 'Literate view of each source page'
+  end
 end
