@@ -7,7 +7,6 @@ ruby '3.2.2'
 gem 'byebug'
 
 # https://github.com/dchacke/hiccdown
-gem 'hiccdown'
 
 # https://rtomayko.github.io/rocco/rocco.html
 gem 'rocco'
