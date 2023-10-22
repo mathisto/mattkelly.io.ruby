@@ -7,6 +7,7 @@ default: &default
 development:
   <<: *default
   database: mattkelly_io_db_dev
+  username: mathisto
   pool: 2
 test:
   <<: *default
