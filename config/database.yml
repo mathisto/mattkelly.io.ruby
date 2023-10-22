@@ -1,15 +1,19 @@
-development:
+default: &default
   adapter: postgresql
+  database_url: <%= ENV['DATABASE_URL'] %>
   encoding: unicode
-  database: database_name
-  pool: 2
-  username: your_username
-  password: your_password
-production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  host: <%= ENV['DATABASE_HOST'] %>
-  database: <%= ENV['DATABASE_NAME'] %>
-  username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+development:
+  <<: *default
+  database: mattkelly_io_db_dev
+  pool: 2
+test:
+  <<: *default
+  database: mattkelly_io_db_test
+  pool: 2
+production:
+  <<: *default
+  database: mattkelly_io_db
+  host: mattkelly.io
+  pool: 5

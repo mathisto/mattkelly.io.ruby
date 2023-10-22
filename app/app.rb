@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# As early as possible in your application bootstrap process, load .env:
+require 'dotenv/load'
+
 # No need to drag our big sibling, Rails, into the mix.
 # Let's keep it simple and use Sinatra.
 require 'sinatra/base'

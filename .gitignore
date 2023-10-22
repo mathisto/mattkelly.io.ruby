@@ -1,1 +1,11 @@
 .ruby-lsp/
+
+# DotENV gem
+.env
+.env.development
+.env.development.local
+.env.local
+.env.production
+.env.production.local
+.env.test
+.env.test.local

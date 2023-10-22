@@ -27,3 +27,7 @@ group :development do
   gem 'rubocop'
   gem 'shotgun'
 end
+
+group :development, :test do
+  gem 'dotenv'
+end
