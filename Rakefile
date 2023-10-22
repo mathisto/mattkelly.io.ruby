@@ -6,7 +6,7 @@ require 'dotenv/tasks'
 
 namespace :db do
   task :load_config do
-    require './app'
+    require './app/app'
   end
 end
 
@@ -18,7 +18,3 @@ task :generate_literate_views do
   # Render all Markdown annotated ruby files, including Markaby templates, that are present in the `app` directory into HTML
   `docco --layout=default --extension=rb app/**/*`
 end
-
-# task mytask: :dotenv do
-#     # things that require .env
-# end
