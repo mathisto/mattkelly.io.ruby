@@ -1,5 +1,8 @@
 .ruby-lsp/
 
+# Rack Middleware Session
+.session.key
+
 # DotENV gem
 .env
 .env.development

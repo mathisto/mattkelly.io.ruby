@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 class App < Sinatra::Base
   # Homepage/Root
   get '/' do

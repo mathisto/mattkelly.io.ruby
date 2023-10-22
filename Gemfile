@@ -24,10 +24,10 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rubocop'
-  gem 'rerun'
 end
 
 group :development, :test do
   gem 'amazing_print'
   gem 'pry'
+  gem 'rerun'
 end
