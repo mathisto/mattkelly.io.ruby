@@ -13,21 +13,14 @@ require 'sinatra/activerecord'
 # I'd like to keep everything as "ruby as possible". Let's use the venerable Markaby.
 require 'markaby'
 
+# I'd like to keep the routes in their own file
+require_relative 'routes'
+
 # Our index page and entry point for the app.
 class App < Sinatra::Base
-  set :database, { adapter: 'pg', database: 'mattkelly_io_db' }
   set :root, File.dirname(__FILE__)
   set :public_folder, 'docs'
   enable :static
 
-  # The ["Landing Page"](/)
-  get '/' do
-    markaby :index
-  end
-
-  # The ["Landing Page"](/api) which simply echos params
-  get '/api' do
-    content_type :json
-    { params: }.to_json
-  end
+  Dir["#{Dir.pwd}/app/models/*.rb"].each { |file| require file }
 end

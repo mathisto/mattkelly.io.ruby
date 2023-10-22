@@ -34,4 +34,8 @@ class Siren < ActiveRecord::Base
       created_at: @created_at,
       station: @station }
   end
+
+  def to_s
+    "#{@category}: #{@title} - #{@incident_type} - #{@incident_location} - #{@municipality} - #{@station} @#{@created_at}"
+  end
 end

@@ -11,7 +11,7 @@ class CreateSirens < ActiveRecord::Migration[7.1]
       t.string :station
       t.datetime :dispatched_at, null: false
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
