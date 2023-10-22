@@ -24,7 +24,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rubocop'
-  gem 'shotgun'
+  gem 'rerun'
 end
 
 group :development, :test do
