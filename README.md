@@ -9,6 +9,11 @@ A personal working laboratory for Matt Kelly, Esq.
 - Ruby 3.2.2
 - [docco-next](https://github.com/mobily-enterprises/docco-next)
 
+## Development
+
+1. `bundle install` to install dependencies.
+2. `thin start` to start the web server.
+
 ## Deploy
 
 `git push dokku trunk`
