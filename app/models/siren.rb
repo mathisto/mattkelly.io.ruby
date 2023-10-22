@@ -5,7 +5,9 @@
 # We can just use the same data structure for both varieties, but "Incident [Sub-Type"
 # will be `nil` for EMS and Fire.
 
-class Alarm
+class Siren < ActiveRecord::Base
+  validates_presence_of :title, :category, :incident_type, :incident_location, :municipality
+
   attr_accessor :description, :title, :category, :incident_type, :incident_location,
                 :municipality, :created_at, :station
 

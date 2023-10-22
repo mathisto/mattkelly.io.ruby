@@ -3,7 +3,7 @@
 require 'sidekiq-scheduler'
 require 'rss'
 require 'open-uri'
-require 'app/models/alarm'
+require 'app/models/siren'
 
 URL = 'https://webapp07.montcopa.org/eoc/cadinfo/livecadrss.asp'
 
@@ -24,11 +24,9 @@ end
 
 def all_items(feed)
   # Now we can tap-build and array with all the feed items as neat little hashes and return it
-  [].tap do |arr|
+  [].tap do |_alarms|
     feed.items.each do |alarm|
-      arr << { title: alarm.title,
-               description: alarm.description,
-               created_at: alarm.pubDate }
+      Siren.new(alarm)
     end
   end
 end

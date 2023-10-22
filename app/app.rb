@@ -12,7 +12,7 @@ require 'markaby'
 
 # Our index page and entry point for the app.
 class App < Sinatra::Base
-  set :database, {adapter: 'pg', database: 'mattkelly_io_db'}
+  set :database, { adapter: 'pg', database: 'mattkelly_io_db' }
   set :root, File.dirname(__FILE__)
   set :public_folder, 'docs'
   enable :static

@@ -9,6 +9,7 @@ gem 'byebug'
 # https://github.com/dchacke/hiccdown
 gem 'markaby', '~> 0.9.0'
 gem 'pg'
+gem 'rake'
 gem 'rss', '~> 0.3.0'
 gem 'sidekiq', '~> 7.1'
 gem 'sidekiq-scheduler', '~> 5.0'
