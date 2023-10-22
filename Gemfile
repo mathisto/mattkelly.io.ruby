@@ -7,6 +7,7 @@ ruby '3.2.2'
 gem 'activerecord'
 gem 'byebug'
 # https://github.com/dchacke/hiccdown
+gem 'dotenv'
 gem 'markaby', '~> 0.9.0'
 gem 'pg'
 gem 'rake'
@@ -20,14 +21,13 @@ gem 'sinatra-activerecord'
 gem 'thin'
 
 group :development do
-  gem 'amazing_print'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry'
   gem 'rubocop'
   gem 'shotgun'
 end
 
 group :development, :test do
-  gem 'dotenv'
+  gem 'amazing_print'
+  gem 'pry'
 end
