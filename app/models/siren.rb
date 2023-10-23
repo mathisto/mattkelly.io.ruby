@@ -6,22 +6,14 @@
 # will be `nil` for EMS and Fire.
 
 class Siren < ActiveRecord::Base
-  attr_accessor :description, :title, :category, :incident_type, :incident_location,
-                :municipality, :created_at, :station
+  validates_presence_of :category, :incident_type, :incident_location, :municipality
 
-  validates_presence_of :title, :category, :incident_type, :incident_location, :municipality
-
-  def to_h
-    { category: @category,
-      title: @title,
-      incident_type: @incident_type,
-      incident_location: @incident_location,
-      municipality: @municipality,
-      created_at: @created_at,
-      station: @station }
-  end
-
-  def to_s
-    "#{@category}: #{@title} - #{@incident_type} - #{@incident_location} - #{@municipality} - #{@station} @#{@created_at}"
-  end
+  # def to_h
+  #   { category: @category,
+  #     incident_type: @incident_type,
+  #     incident_location: @incident_location,
+  #     municipality: @municipality,
+  #     created_at: @created_at,
+  #     station: @station }
+  # end
 end

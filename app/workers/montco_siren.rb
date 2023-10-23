@@ -27,6 +27,7 @@ URL = 'https://webapp07.montcopa.org/eoc/cadinfo/livecadrss.asp'
       description = item.description
       category_and_title = item.title
       category, incident_type = category_and_title.split(': ')
+      dispatched_at = item.pubDate.to_datetime
 
       case category
       when 'Fire', 'EMS'
@@ -38,6 +39,6 @@ URL = 'https://webapp07.montcopa.org/eoc/cadinfo/livecadrss.asp'
         puts "NO MATCHING CATEGORY FOUND: #{category}"
       end
 
-      { category: category, incident_type: incident_type, incident_location: incident_location, municipality: municipality, created_at: created_at, station: station }
+      { category:, incident_type:, incident_location:, municipality:, created_at:, station:, dispatched_at: }
     end
   end
