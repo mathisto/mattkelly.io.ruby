@@ -1,4 +1,6 @@
 require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
+require_relative 'models/siren'
 
 class App < Sinatra::Base
   # Homepage/Root
@@ -15,23 +17,10 @@ class App < Sinatra::Base
   ##############################################################################
   # Montco Sirens - Local Montgomery County PA WebCAD aggregation and enrichment
   get '/sirens' do
-    @siren = Siren.all
+    @siren = ::Siren.all.to_json
   end
 
   get '/sirens/:id' do
-    @siren = Siren.find(params[:id])
-  end
-
-  post '/sirens' do
-    @siren = Siren.create(params[:siren])
-  end
-
-  delete '/sirens/:id' do
-    Siren.destroy(params[:id])
-  end
-
-  put '/sirens/:id/publish' do
-    @siren = Siren.find(params[:id])
-    @siren.publish!
+    @siren = ::Siren.find(params[:id]).to_json
   end
 end

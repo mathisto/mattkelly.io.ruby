@@ -1,5 +1,4 @@
 :scheduler:
   :schedule:
-    montco_sirens:
+    MontcoSirenWorker:
       cron: '*/4 * * * * *' # Every 4 minutes
-      class: Workers::MontcoSirens

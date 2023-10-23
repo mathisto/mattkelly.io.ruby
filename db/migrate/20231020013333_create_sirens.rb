@@ -3,7 +3,6 @@
 class CreateSirens < ActiveRecord::Migration[7.1]
   def change
     create_table :sirens do |t|
-      t.string :title, null: false
       t.string :category, null: false
       t.string :incident_type, null: false
       t.string :incident_location, null: false

@@ -6,24 +6,10 @@
 # will be `nil` for EMS and Fire.
 
 class Siren < ActiveRecord::Base
-  validates_presence_of :title, :category, :incident_type, :incident_location, :municipality
-
   attr_accessor :description, :title, :category, :incident_type, :incident_location,
                 :municipality, :created_at, :station
 
-  def initialize(alarm)
-    @description = alarm.description
-    category_title = alarm.title
-    @category, @title = category_title.split(': ')
-
-    case @category
-    in ['FIRE', 'EMS']
-      @incident_location, @municipality, @station, @created_at = @description.split(/;\ */)
-    in ['TRAFFIC']
-      @incident_location, @municipality, @created_at = @description.split(/;\ */)
-      @title = @title.chomp(' -')
-    end
-  end
+  validates_presence_of :title, :category, :incident_type, :incident_location, :municipality
 
   def to_h
     { category: @category,
