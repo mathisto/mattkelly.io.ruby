@@ -17,7 +17,7 @@ URL = 'https://webapp07.montcopa.org/eoc/cadinfo/livecadrss.asp'
       rss = RSS::Parser.parse(HTTPX.get(URL).to_s)
       rss.items.each do |item|
         item_hash = parse(item)
-        Siren.where()
+        # Siren.where() TODO: Add a where(unique_conds).first_or_create
         Siren.create(item_hash)
       end
     end
