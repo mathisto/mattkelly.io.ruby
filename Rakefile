@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
+require 'dotenv/tasks'
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
-require 'dotenv/tasks'
+require 'standard/rake'
 
 namespace :db do
   task :load_config do
