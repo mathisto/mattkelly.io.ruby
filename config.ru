@@ -19,4 +19,6 @@ File.open('.session.key', 'w') { |f| f.write(SecureRandom.hex(32)) }
 use Rack::Session::Cookie, secret: File.read('.session.key'), same_site: true, max_age: 86_400
 
 # Lets's mount our app and the Sidekiq web UI
-run Rack::URLMap.new('/' => App, '/sidekiq' => Sidekiq::Web)
+run Rack::URLMap.new(
+  '/' => App,
+  '/sidekiq' => Sidekiq::Web)

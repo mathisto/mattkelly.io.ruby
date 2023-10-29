@@ -2,7 +2,7 @@
 
 require 'sidekiq-scheduler'
 require 'rss'
-require 'open-uri'
+require 'httpx'
 require 'active_record'
 require 'sinatra/activerecord'
 require 'amazing_print'
@@ -14,10 +14,11 @@ URL = 'https://webapp07.montcopa.org/eoc/cadinfo/livecadrss.asp'
     include Sidekiq::Worker
 
     def perform
-      # Let's slurp that feed into a collection
-      feed = URI.open(URL) { |rss| RSS::Parser.parse(rss) }
-      feed.items.each do |item|
-        Siren.create(parse(item))
+      rss = RSS::Parser.parse(HTTPX.get(URL).to_s)
+      rss.items.each do |item|
+        item_hash = parse(item)
+        Siren.where()
+        Siren.create(item_hash)
       end
     end
 

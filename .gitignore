@@ -1,5 +1,6 @@
 .ruby-lsp/
 playground/
+logs/
 
 # Rack Middleware Session
 .session.key

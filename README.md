@@ -1,13 +1,13 @@
 # mattkelly.io
 
-A personal working laboratory for Matt Kelly, Esq.
+A personal working laboratory for Matthew Ryan Kelly, Esq.
 
 ## Requirements
 
 - PostgreSQL 16
 - Redis
 - Ruby 3.2.2
-- [docco-next](https://github.com/mobily-enterprises/docco-next)
+- [docco-next](https://github.com/mobily-enterprises/docco-next) for building literate docs
 
 ## Development
 
