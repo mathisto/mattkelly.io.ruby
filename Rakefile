@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'dotenv/tasks'
-require 'sinatra/activerecord'
-require 'sinatra/activerecord/rake'
-require 'standard/rake'
+require "dotenv/tasks"
+require "sinatra/activerecord"
+require "sinatra/activerecord/rake"
+require "standard/rake"
 
 namespace :db do
   task :load_config do
-    require './app/app'
+    require "./app/app"
   end
 end
 
 task :generate_literate_views do
-  desc 'Build Literate Source Views'
+  desc "Build Literate Source Views"
   # First we clear out all the existing rendered HTML.
   # TODO: Only regenerate diffed files
   `rm -rf docs/**/*.html`
